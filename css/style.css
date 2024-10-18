@@ -412,6 +412,9 @@ a {
         padding: 15px 10%;
         font-size: 1rem;
     }
+    .work-video iframe {
+        min-height: 300px; 
+    }
 
 }
 
