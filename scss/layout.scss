@@ -1,0 +1,47 @@
+@use 'variables' as *;
+@use 'media' as *;
+
+.wrapper {
+  max-width: 100%;
+}
+
+.header {
+  background-color: $light-bg-color;
+  padding: 80px 0;
+}
+
+.container {
+  width: 62%;
+  margin: 0 auto;
+  padding: 0 3%;
+
+  @include respond(sm) {
+    width: 100%;
+    padding: 0 5%;
+  }
+
+  @include respond(md) {
+    width: 90%;
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  color: #FFF;
+  display: flex;
+  max-height: 151px;
+  text-align: left;
+
+  .footer__bg {
+    margin-top: 50px;
+    font-size: 1.3125rem;
+    line-height: 1.5381rem;
+    margin-bottom: 20px;
+  }
+
+  .footer__sm {
+    font-size: 0.8125rem;
+    line-height: 1.3331rem;
+    margin-bottom: 50px;
+  }
+}

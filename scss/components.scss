@@ -1,0 +1,255 @@
+@use 'variables' as *;
+@use 'media' as *;
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 20px 2%;
+}
+
+.hero__btn {
+  min-width: 225px;
+  text-decoration: none;
+  padding: 20px 2%;
+  text-align: center;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-bottom: 140px;
+  background-color: $primary-color;
+  color: #FFF;
+
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+
+  @include respond(sm) {
+    margin-bottom: 80px;
+    padding: 10px 5%;
+    font-size: 0.9rem;
+  }
+
+  @include respond(md) {
+    padding: 15px 10%;
+    font-size: 1rem;
+  }
+}
+
+.hero__title {
+  text-align: left;
+  font-size: 3rem;
+  line-height: 4.92rem;
+  margin-bottom: 60px;
+
+  @include respond(sm) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  @include respond(md) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
+.hero__text {
+  color: $secondary-color;
+  line-height: $line-height;
+  margin-bottom: 65px;
+  max-width: 540px;
+}
+
+.about__title {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3.92rem;
+  margin-bottom: 40px;
+}
+
+.about__text {
+  text-align: center;
+  color: $secondary-color;
+  line-height: $line-height;
+}
+
+.project {
+  background-color: $primary-color;
+  color: #FFF;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px 0;
+  gap: 20px;
+
+  @include respond(sm) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @include respond(lg) {
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 0;
+  }
+}
+
+.project__item {
+  display: flex;
+  gap: 10px;
+}
+
+.project__description {
+  display: grid;
+  gap: 10px;
+}
+
+.project__number {
+  font-size: 1.31rem;
+}
+
+/* Work section */
+.work {
+  background-color: $light-bg-color;
+}
+
+.work-header {
+  max-width: 33.75rem;
+  margin: 0 auto;
+  padding: 100px 3% 50px;
+  text-align: center;
+
+  .work-header__title {
+    font-size: 2rem;
+    line-height: 3.92rem;
+    margin-bottom: 50px;
+
+    @include respond(lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .work-header__text {
+    color: $secondary-color;
+    line-height: $line-height;
+  }
+
+  @include respond(lg) {
+    padding: 60px 3% 40px;
+  }
+}
+
+.work-video-container {
+  .work-video {
+    margin: 0 auto;
+    padding-bottom: 100px;
+
+    @include respond(lg) {
+      padding-bottom: 60px;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 600px;
+
+      @include respond(md) {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+/* Navbar & Burger */
+.navbar-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 23px;
+  list-style: none;
+  margin: 0 0 162px -10px;
+
+  @include respond(md) {
+    display: none;
+    margin-top: 30px;
+  }
+
+  &--active {
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.navbar__link {
+  display: block;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  cursor: pointer;
+
+  &:hover,
+  &.nav__link--active {
+    color: $primary-color;
+  }
+}
+
+.navbar__btn {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  padding-bottom: 50px;
+
+  @include respond(md) {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      top: 9px;
+      transform: rotate(135deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      left: -30px;
+    }
+    span:nth-child(3) {
+      top: 9px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &-row {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 9px;
+    }
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+}
